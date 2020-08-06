@@ -1,0 +1,230 @@
+.first_section {
+    position: relative;
+    background: linear-gradient(45deg, $contrast -25%, $base 100%);
+    @include respond-to("landscape") {
+        height: 100vh;
+    }
+    @include respond-to("large") {
+        width: 496px;
+        background: transparent;
+        .armor {
+            position: fixed;
+            top: 0;
+            width: 496px;
+            left: -496px;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            @include respond-to("large") {
+                .wrapper {
+                    padding: 3rem;
+                    @include respond-to("scroll") {
+                        overflow-y: auto;
+                        height: 100vh;
+                    }
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    @include respond-to("xlarge") {
+        width: 600px;
+        .armor {
+            width: 600px;
+            left: -600px;
+        }
+    }
+    @include respond-to("xxlarge") {
+        width: 715px;
+        .armor {
+            width: 715px;
+            left: -715px;
+        }
+    }
+    .wrapper {
+        z-index: 1;
+        position: relative;
+        @include respond-to("medium") {
+            padding-top: 3rem;
+        }
+    }
+    .login_area {
+        text-align: right;
+        margin-bottom: 1.2rem;
+        @include respond-to("medium") {
+            max-width: 375px;
+        }
+        .sign_in {
+            @include catoonButton(11px);
+            @include hover(black, transparent, $goldletter);
+        }
+        .login_form {
+            position: fixed;
+            display: none;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            height: 100%;
+            overflow-y: auto;
+            background: linear-gradient(45deg, $contrast -25%, $base 100%);
+            .title {
+                >* {
+                    @include text(white, $h3, normal, "Raleway", 700, -0.005em, lowercase);
+                }
+                .close_login {
+                    cursor: pointer;
+                    text-align: center;
+                    &:hover {
+                        color: $goldletter;
+                    }
+                }
+            }
+            .login_option {
+                font-family: "Raleway";
+                color: white;
+                .forgot_password:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+            input[type="text"],
+            input[type="password"],
+            input[type="email"] {
+                width: 95%;
+                border: none;
+                color: #000;
+                font-weight: 300;
+                border-radius: 5px;
+                background-color: $item;
+                padding: 8px 10px 8px 30px;
+                font-family: "Cooper Hewitt";
+                filter: drop-shadow(-5px 6px 0 $goldletter);
+                &::placeholder {
+                    color: #000;
+                }
+            }
+            .submit_login {
+                @include transparentBTN(white, $h5);
+                @include hover($item, white, white);
+            }
+            .other_login {
+                .or {
+                    color: var(--white);
+                    font-family: "Cooper Hewitt";
+                    font-size: 15px;
+                    margin-bottom: .1rem;
+                    margin-top: 1rem;
+                }
+                button {
+                    @include transparentBTN(white, 0.7rem);
+                    &.facebook {
+                        border-color: transparent;
+                        background: #001e5b;
+                    }
+                    &.google {
+                        border-color: transparent;
+                        background: #600f00;
+                    }
+                    &.linkedin {
+                        border-color: transparent;
+                        background: #004e6a;
+                    }
+                    @include hover(white, transparent, rgba(0, 0, 0, 0.51));
+                }
+            }
+            @include respond-to("large") {
+                background: transparent;
+                height: max-content;
+                width: 496px;
+                right: -496px;
+            }
+            @include respond-to("xlarge") {
+                width: 600px;
+                right: -600px;
+            }
+            @include respond-to("xxlarge") {
+                width: 715px;
+                right: -715px;
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+        }
+    }
+    .description {
+        @include respond-to("medium") {
+            max-width: 375px;
+        }
+        h1 {
+            @include text(#fff, $h1, normal, "Raleway", 300, -0.005em, uppercase);
+            &::first-line {
+                font-weight: bold;
+            }
+        }
+        h6 {
+            @include text($goldletter, $h6, normal, "Cooper Hewitt", 300, 0.022em, unset);
+            margin-bottom: 2rem;
+        }
+    }
+    .transparent_btn {
+        @include transparentBTN(#fff, $h6);
+        @include hover(#000, $goldletter, $goldletter);
+    }
+    .hexagon-box {
+        padding-top: 5rem;
+        @include hexagon-component();
+    }
+    .continuous {
+        padding-bottom: 3rem;
+        @include respond-to("small") {
+            padding-top: 2rem;
+        }
+        .animate-arrow {
+            width: 27px;
+            margin: auto;
+            animation: arrow 2s infinite
+        }
+    }
+    .background {
+        bottom: 0;
+        z-index: 0;
+        width: 100%;
+        opacity: 0.27;
+        display: flex;
+        overflow: hidden;
+        max-height: 685px;
+        user-select: none;
+        padding-top: 80px;
+        touch-action: auto;
+        position: absolute;
+        pointer-events: none;
+        justify-content: center;
+        -webkit-user-drag: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        @include respond-to("medium") {
+            max-height: 745px;
+        }
+        @include respond-to("large") {
+            max-height: 600px;
+            overflow: unset;
+        }
+        .rotate {
+            width: 800px;
+            transform: translateY(55px) rotate(10.6deg);
+            @include respond-to("small") {
+                width: 960px;
+            }
+            @include respond-to("medium") {
+                width: 1075px;
+            }
+            @include respond-to("large") {
+                width: 120vw;
+                transform: translateY(-30px) translateX(15%) rotate(10.6deg);
+            }
+        }
+    }
+}

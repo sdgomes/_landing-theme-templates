@@ -1,0 +1,20 @@
+.presentation {
+    background: $gDark;
+    .header {
+        h4 {
+            @include text($subMainTitle, $h4, bold, "Raleway", 600, -0.005em, uppercase);
+        }
+        p {
+            @include text($subMainTitle, $h5, normal, "Raleway", 300, -0.005em, unset);
+            &.left {
+                padding-left: 1rem;
+            }
+            &.right {
+                padding-right: 1rem;
+            }
+        }
+    }
+    .illustration {
+        max-width: 220px;
+    }
+}

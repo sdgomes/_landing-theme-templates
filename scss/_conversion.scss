@@ -1,0 +1,67 @@
+.conversion {
+    position: relative;
+    background: linear-gradient(45deg, $contrast -25%, $base 100%);
+    @include respond-to("large") {
+        background: transparent;
+    }
+    .wrapper {
+        padding-top: 7rem;
+        padding-bottom: 5rem;
+    }
+    .wall {
+        min-width: 385px;
+        min-height: 605px;
+        margin-left: 4rem;
+        position: relative;
+        background: $grayColor;
+        img {
+            position: absolute;
+            transform: translate(-55px, -65px) scale(.89) rotate(8deg);
+        }
+        .form_area {
+            position: absolute;
+            width: calc(100% - 6rem);
+            transform: translate(-2.9rem, 9rem);
+            h3 {
+                @include text($subMainTitle, $h3, normal, "Raleway", 800, -0.005em, uppercase);
+                span {
+                    color: #fff;
+                }
+            }
+            .cartoon {
+                div {
+                    margin-top: 1.5rem;
+                    margin-bottom: 1.5rem;
+                    textarea {
+                        resize: none;
+                        height: 130px;
+                    }
+                    input,
+                    textarea {
+                        width: 95%;
+                        border: none;
+                        color: #000;
+                        font-weight: 300;
+                        border-radius: 5px;
+                        background-color: $item;
+                        padding: 8px 10px 8px 30px;
+                        font-family: "Cooper Hewitt";
+                        filter: drop-shadow(-5px 6px 0 $goldletter);
+                        &::placeholder {
+                            color: #000;
+                        }
+                    }
+                }
+                .submit {
+                    text-align: center;
+                    >* {
+                        @include transparentBTN($item, $h6);
+                        @include hover(#fff, $item, $item);
+                        padding-left: 30px;
+                        padding-right: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

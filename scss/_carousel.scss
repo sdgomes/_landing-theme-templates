@@ -1,0 +1,68 @@
+.sec_carousel {
+    background: $grayColor;
+    .highlight {
+        >* {
+            @include text($subMainTitle, $h4, normal, "Raleway", 300, -0.005em, uppercase);
+            &::first-line {
+                font-weight: bold;
+            }
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        top: 0;
+        left: 0;
+        z-index: 100;
+        margin-top: -5px;
+        max-width: 235px;
+        margin-left: -5px;
+        padding: 1.2rem 0;
+        position: absolute;
+        pointer-events: none;
+        background: $grayColor;
+    }
+    .carousel {
+        .carousel-indicators {
+            bottom: -20px;
+            li {
+                background-color: $purpleGray;
+                &.active {
+                    background-color: $goldletter;
+                }
+            }
+        }
+        .carousel-inner {
+            .avatar {
+                max-width: 80px;
+                margin-left: auto;
+            }
+            .avatar_description {
+                padding-left: 7px;
+                margin-top: 3.5rem;
+                padding-right: 7px;
+                margin-bottom: 1rem;
+                p {
+                    svg {
+                        width: 28px;
+                        fill: $goldletter;
+                        &:first-child {
+                            margin-right: 10px;
+                            transform: rotate(180deg);
+                        }
+                        &:last-child {
+                            margin-left: 10px;
+                        }
+                    }
+                    span {
+                        @include text($goldletter, $h6, normal, "Cooper Hewitt", 300, 0.022em, unset);
+                    }
+                }
+            }
+        }
+    }
+    .area_button {
+        margin-top: 3rem;
+        >* {
+            @include catoonButton(14px);
+        }
+    }
+}

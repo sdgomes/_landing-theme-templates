@@ -1,0 +1,110 @@
+.informative {
+    background: $grayColor;
+    @include respond-to("medium") {
+        .wrapper {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+    }
+    .benefits {
+        .head {
+            display: flex;
+            flex-wrap: wrap;
+            .illustration {
+                max-width: 240px;
+                margin-left: -20px;
+                @include respond-to("medium") {
+                    max-width: 330px;
+                    margin-left: -40px;
+                }
+                @include respond-to("large") {
+                    max-width: 260px;
+                    margin-left: 0;
+                }
+            }
+            .manchete {
+                max-width: 240px;
+                margin-left: auto;
+                text-align: right;
+                padding-top: 3rem;
+                @include respond-to("medium") {
+                    max-width: 330px;
+                }
+                >* {
+                    @include text($subMainTitle, $h4, normal, "Raleway", 300, -0.005em, uppercase);
+                    &::first-line {
+                        font-weight: bold;
+                    }
+                    @include respond-to("medium") {
+                        font-size: $h2;
+                    }
+                }
+            }
+        }
+        .body {
+            padding: 0 5px;
+            .lettering {
+                @include text($subMainTitle, $h5, normal, "Cooper Hewitt", 300, -0.022em, unset);
+                margin-top: 2.5rem;
+                @include respond-to("medium") {
+                    font-size: $h4;
+                }
+            }
+            svg {
+                width: 20px;
+            }
+            .list {
+                @include text($goldletter, $h6, normal, "Cooper Hewitt", 300, -0.022em, unset);
+                padding-left: 1rem;
+                @include respond-to("medium") {
+                    font-size: $h5;
+                }
+            }
+        }
+    }
+    .proposal {
+        h2 {
+            @include text($subMainTitle, $h3, normal, "Raleway", 300, -0.005em, uppercase);
+            &::first-line {
+                font-weight: bold;
+            }
+        }
+        .box_proposal {
+            margin: auto;
+            height: 295px;
+            flex-wrap: wrap;
+            max-width: 280px;
+            margin-top: 2rem;
+            border-radius: 5px;
+            background: white;
+            margin-bottom: 2rem;
+            @include flexCenter();
+            border: 5px solid $purpleGray;
+            .icone {
+                padding-top: 1rem;
+                transform: scale(1.5);
+            }
+            .text_description {
+                h4 {
+                    @include text($subMainTitle, $h4, normal, "Cooper Hewitt", 600, 0.01em, unset);
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    @include text($subMainTitle, $h6, normal, "Cooper Hewitt", 300, 0.01em, unset);
+                    text-align: center;
+                    margin-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }
+            }
+            .area_button {
+                margin-bottom: 1rem;
+                a {
+                    @include transparentBTN($purpleGray, $h6);
+                    @include hover(#fff, $purpleGray, $purpleGray);
+                }
+            }
+        }
+    }
+}

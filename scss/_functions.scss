@@ -1,0 +1,105 @@
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flexEndCenter {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+@mixin catoonButton($size) {
+    border: none;
+    color: black;
+    font-weight: 300;
+    font-size: $size;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 10px 2px;
+    letter-spacing: 1.55px;
+    background: $goldletter;
+    text-transform: uppercase;
+    font-family: "Cooper Hewitt";
+    filter: drop-shadow(-6px -6px 0 $shadow);
+    cursor: pointer;
+    transition: background linear 150ms, border-color linear 150ms;
+}
+
+@mixin transparentBTN($color, $size) {
+    color: $color;
+    cursor: pointer;
+    font-size: $size;
+    font-weight: 500;
+    border: 2px solid;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 20px 5px;
+    background: transparent;
+    text-transform: uppercase;
+    font-family: "Cooper Hewitt";
+    transition: background linear 150ms, border-color linear 150ms;
+}
+
+@mixin hover($color, $border, $background) {
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color;
+        outline: none;
+        border-color: $border;
+        text-decoration: none;
+        background: $background;
+    }
+}
+
+@mixin text($color, $size, $style, $font, $weight, $spacing, $transform) {
+    color: $color;
+    line-height: 1.2;
+    font-size: $size;
+    font-style: $style;
+    font-family: $font;
+    font-weight: $weight;
+    letter-spacing: $spacing;
+    text-transform: $transform;
+}
+
+@mixin respond-to($media) {
+    @if $media=="small" {
+        @media screen and (min-width: 576px) {
+            @content;
+        }
+    }
+    @else if $media=="medium" {
+        @media screen and (min-width: 768px) {
+            @content;
+        }
+    }
+    @else if $media=="large" {
+        @media screen and (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $media=="xlarge" {
+        @media screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $media=="xxlarge" {
+        @media screen and (min-width: 1441px) {
+            @content;
+        }
+    }
+    @else if $media=="landscape" {
+        @media screen and (min-width: 768px) and (min-height: 1024px) and(max-height: 1024px) {
+            @content;
+        }
+    }
+    @else if $media=="scroll" {
+        @media screen and (max-height: 854px) {
+            @content;
+        }
+    }
+}

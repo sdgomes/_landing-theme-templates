@@ -1,0 +1,32 @@
+.footer {
+    position: relative;
+    background: linear-gradient(45deg, $contrast -25%, $base 100%);
+    @include respond-to("large") {
+        background: transparent;
+    }
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .box_logo {
+            width: 100%;
+            height: 55px;
+            max-width: 215px;
+            max-height: 55px;
+            background: red;
+        }
+        .social_icon {
+            margin: 1rem 0;
+            max-width: 125px;
+            div {
+                color: #fff;
+                font-size: 25px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+    .pgrup {
+        font-size: 0.9rem;
+    }
+}
